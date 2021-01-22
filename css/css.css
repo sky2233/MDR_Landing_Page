@@ -1,5 +1,4 @@
 html {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     scroll-behavior: smooth;
 }
@@ -18,6 +17,10 @@ html {
 
 .midnightBlue {
     color: midnightblue;
+}
+
+.blue2 {
+    color: #0F5298;
 }
 
 body {
@@ -49,6 +52,13 @@ i {
     width: 20px;
 }
 
+.underline {
+    border-bottom: 2px solid #3C99DC;
+    width: 80%;
+    margin: 10% 10%;
+    margin-bottom: 5%;
+}
+
 .clear {
     width: 100%;
     border: none;
@@ -77,6 +87,8 @@ i {
     float: left;
     text-align: center;
     padding: 16px 20px;
+    transition-property: background-color;
+    transition-duration: 0.5s;
 }
 
 #navBarItems li:hover {
@@ -109,6 +121,10 @@ i {
     margin: 0;
 }
 
+#dropdown:hover #dropdownContent {
+    display: block;
+}
+
 #dropdownContent {
     display: none;
     position: absolute;
@@ -125,6 +141,7 @@ i {
     text-decoration: none;
     display: block;
     text-align: left;
+    cursor: pointer;
 }
 
 #dropdownContent a:hover {
@@ -148,13 +165,15 @@ i {
     height: 80vh;
     width: 100%;
     margin-left: 0;
-    background-image: linear-gradient(#1159a5, midnightblue);
+    /* background-image: url("images/background.jpg"); */
+    /* background-image: linear-gradient(#1159a5, midnightblue); */
     /* background-color: #0e4d92; */
     color: white;
 }
 
 #section2 {
     padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
 #section2 li{
@@ -162,11 +181,26 @@ i {
 }
 
 #section3 {
+    width: 80%;
+    padding: 5vh 10%;
     padding-top: 10vh;
+    background-color: #f2f2f2;
+}
+
+#section3 h2 {
+    margin-top: 0;
+    margin-bottom: 4px;
+    color: navy;
+}
+
+#section3 h3 {
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    color: #41597d;
 }
 
 #section4 {
-    padding-top: 10vh;
     width: 100%;
 }
 
@@ -211,6 +245,31 @@ i {
     margin-top: 5vh;
 }
 
+.pointBox {
+    /* background-color: lightgray; */
+    /* padding: 20px; */
+    margin: 20px;
+    width: calc(50% - 50px);
+    display: inline-block;
+    vertical-align: top;
+}
+
+.pointBox p {
+    margin-bottom: 0;
+}
+
+.pointBox img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+.pointBox h4 {
+    text-align: center;
+    padding-top: 10px;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -223,25 +282,25 @@ i {
 
 .video {
     margin-top: 10vh;
-    max-width: 400px;
     display: block;
     float: left;
-    margin-left: 5vh;
+    padding-bottom: 5vh;
 }
 
 .video video {
-    max-width: 400px;
-    max-height: 250px;
+    width: 100%;
+    height: auto;
+    /* max-width: 400px;
+    max-height: 250px; */
 }
 
 .sideDes {
-    margin-right: 2%;
+    /* margin-right: 2%; */
     float: left;
-    min-width: 20%;
-    max-width: 35%;
 }
 
 .sideDes h2 {
+    margin-top: 0;
     text-align: left;
 }
 
@@ -260,42 +319,50 @@ i {
 }
 
 .firstRow {
-    width: 100%;
+    width: 90%;
+    padding: 10vh 5%;
     overflow:auto;
     height: max-content;
-    background-color: #1350a3;
+    background-color: #0a296d;
     color: white;
     justify-content: center;
 }
 
 .registerContainer {
-    display: flex;
     margin: auto;
     margin-top: 10vh;
     width: 80%;
-    height: fit-content;
-    align-items: center;
-    flex-wrap: wrap;
-    overflow: auto;
 }
 
-.registerContainer > div {
-    flex: 1;
-    height: 150px;
+.stepContainer {
+    width: 30%;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .partnerContainer {
-    display: flex;
     width: 80%;
+    padding: 10vh 10%;
     margin: auto;
     margin-top: 10vh;
-    flex-wrap: wrap;
-    overflow: auto;
+    background-color: #cfdff2;
 }
 
 .partnerContainer > div {
-    flex: 1;
-    margin-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: fit-content;
+    max-width: calc(50% - 25px);
+    padding: 10px;
+    padding-top: 5vh;
+}
+
+.partnerContainer img {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: auto;
 }
 
 .center {
@@ -360,10 +427,11 @@ i {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto;
+    margin: 10vh auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 60%;
+    width: 60vh;
+    border-radius: 5px;
 }
 
 .close {
@@ -381,10 +449,49 @@ i {
 }
 
 .row {
-    width: 100%;
-    padding: 20px;
+    width: 90%;
+    margin: 20px 5%;
 }
 
 .row input {
-    height: 20px;
+    width: calc(100% - 10px);
+    padding: 5px;
+    margin-top: 6px;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+}
+
+.row label {
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+.rowName {
+    width: 90%;
+    margin: 20px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.rowName label {
+    width: 50%;
+    padding-top: 12px;
+    padding-bottom: 6px;
+}
+
+.rowName input {
+    width: calc(50% - 20px);
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+}
+
+.rowName input:hover, .row input:hover {
+    color: navy;
+    border-color: #095484;
+}
+
+.rowName input:focus, .row input:focus {
+    outline: none !important;
+    border-color: #095484;
 }
